@@ -54,3 +54,7 @@
 .similar-product img{
   max-width: 190px;
 }
+
+.room-image{
+  position: absolute;
+}

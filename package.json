@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-scripts": "1.0.17"
+    "konva": "^1.7.6",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-konva": "^1.6.4",
+    "react-scripts": "1.0.17",
+    "require": "^2.4.20",
+    "requirejs": "^2.3.5"
   },
   "scripts": {
     "start": "react-scripts start",
