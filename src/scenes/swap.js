@@ -54,35 +54,12 @@ class Swap extends React.Component {
         });
     }
 
-    handleCanvasClick(event, id, productUrl, img) {
+    handleCanvasClick(event, id, productUrl) {
         if (clickedTransparent(event)) {
             return;
         }
 
-        let selectedProduct;
-        let similarProducts = [];
-        for (let i = 0; i < this.state.products.length; i++) {
-            if (this.state.products[i].id === id) {
-                selectedProduct = this.state.products[i];
-                similarProducts = selectedProduct.similar_producs.slice();
-            }
-        }
-
-        if (similarProducts.length > 0) {
-            similarProducts.push({
-                url: selectedProduct.url,
-                price: selectedProduct.price,
-            });
-        }
-
-        this.setState({
-            selectedProductId: id,
-            selectedProductUrl: productUrl,
-            selectedProductType: selectedProduct.type,
-            similarProducts: similarProducts
-        }, () => {
-            img.cache();
-        });
+        return this.handleProductChange(id,productUrl)
     }
 
     render() {
@@ -114,38 +91,11 @@ class Swap extends React.Component {
 }
 
 function clickedTransparent(event) {
-    // let ctx = document.createElement("canvas").getContext("2d");
-    // let x = event.pageX - this.offsetLeft,
-    //     y = event.pageY - this.offsetTop,
-    //     w = ctx.canvas.width = this.width,
-    //     h = ctx.canvas.height = this.height,
-    //     alpha;
-    //
-    // // Draw image to canvas
-    // // and read Alpha channel value
-    // ctx.drawImage(this, 0, 0, w, h);
-    // alpha = ctx.getImageData(x, y, 1, 1).data[3]; // [0]R [1]G [2]B [3]A
-    //
-    // // If pixel is transparent,
-    // // retrieve the element underneath and trigger it's click event
-    // if( alpha===0 ) {
-    //     console.log("WHITE space");
-    // } else {
-    //     console.log("LOGO clicked!");
-    // }
-
     let ctx = document.getElementsByTagName("canvas")[0].getContext("2d");
 
-    let alpha = ctx.getImageData(event.pageX, event.pageY, 1, 1).data[3]; // [0]R [1]G [2]B [3]A
+    let alpha = ctx.getImageData(event.evt.pageX, event.evt.pageY, 1, 1).data[3];
 
-    // If pixel is transparent,
-    // retrieve the element underneath and trigger it's click event
-    if (alpha === 0) {
-        console.log("WHITE space");
-    } else {
-        console.log("LOGO clicked!");
-    }
-
+    return alpha === 0
 }
 
 export default Swap;

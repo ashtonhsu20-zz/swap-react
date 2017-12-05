@@ -12,14 +12,14 @@ const apiService = {
                     width: 58.1189,
                     height: 27.7761,
                     type: 'sofa',
-                    url: 'https://d32n2fbipjm5yj.cloudfront.net/RANCH-COUCH/preview/RANCH-COUCH_Couches_0792.png',
+                    url: 'imgs/RANCH-COUCH_Couches_0792.png',
                     price: 2000.00,
                     similar_producs: [{
-                        url: 'https://d32n2fbipjm5yj.cloudfront.net/GWSOFA1/preview/GWSOFA1_Couches_0792.png',
+                        url: 'imgs/GWSOFA1_Couches_0792.png',
                         price: 199.99,
                     }, {
                         price: 1200.00,
-                        url: 'https://d32n2fbipjm5yj.cloudfront.net/STYSOFA/preview/STYSOFA_Couches_0792.png',
+                        url: 'imgs/STYSOFA_Couches_0792.png',
                     }]
                 }, {
                     id: 111,
@@ -29,7 +29,7 @@ const apiService = {
                     width: 7.87608,
                     height: 7.90381,
                     type: 'art',
-                    url: 'https://d32n2fbipjm5yj.cloudfront.net/MIN-FCC-GNA/preview/MIN-FCC-GNA_WallArt_0351.png',
+                    url: 'imgs/MIN-FCC-GNA_WallArt_0351.png',
                     price: 100.00,
                     similar_producs: [],
                 }, {
@@ -40,7 +40,7 @@ const apiService = {
                     width: 6.10141,
                     height: 7.29,
                     type: 'plant',
-                    url: 'https://d32n2fbipjm5yj.cloudfront.net/VBPLANT4/preview/VBPLANT4_Decor_0432.png',
+                    url: 'imgs/VBPLANT4_Decor_0432.png',
                     price: 250.00,
                     similar_producs: [],
                 }, {
@@ -51,7 +51,7 @@ const apiService = {
                     width: 34.4195,
                     height: 16.5034,
                     type: 'table',
-                    url: 'https://d32n2fbipjm5yj.cloudfront.net/MOCOFFETABLE/preview/MOCOFFETABLE_Main_0864.png',
+                    url: 'imgs/MOCOFFETABLE_Main_0864.png',
                     price: 300.00,
                     similar_producs: [],
                 }, {
@@ -62,7 +62,7 @@ const apiService = {
                     width: 26.9852,
                     height: 28.1286,
                     type: 'chair',
-                    url: 'https://d32n2fbipjm5yj.cloudfront.net/ARMCHAIR21/preview/ARMCHAIR21_Main_0848.png',
+                    url: 'imgs/ARMCHAIR21_Main_0848.png',
                     price: 150.00,
                     similar_producs: [],
                 }

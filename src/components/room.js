@@ -20,8 +20,8 @@ class Room extends React.Component {
         return (
             <div>
                 <img className="room-image" src={this.props.roomPhoto}/>
-                <Stage width={1080} height={1080} id="canvas">
-                    <Layer id={"canvas"}>
+                <Stage width={1080} height={1080}>
+                    <Layer>
                     {products}
                     </Layer>
                 </Stage>
