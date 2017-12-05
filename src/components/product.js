@@ -1,5 +1,5 @@
 import React from "react";
-import {Layer, Rect, Stage, Group, Image} from 'react-konva';
+import {Image} from 'react-konva';
 
 class Product extends React.Component {
     constructor(props) {
@@ -11,26 +11,24 @@ class Product extends React.Component {
     }
 
     handleClick(e) {
-        return this.props.handleCanvasClick(e, this.props.productId, this.props.productUrl);
+        return this.props.handleCanvasClick(e, this.props.productId, this.state.image.src);
     }
 
     componentWillReceiveProps(nextProps) {
-        if (this.props.productUrl !== nextProps.productUrl) {
-            console.log(nextProps.productUrl);
-            const image = new window.Image();
-            image.src = nextProps.productUrl;
-
-            image.onload = () => {
-                this.setState({
-                    image: image
-                });
-            }
+        if (this.props.selectedProductUrl !== nextProps.selectedProductUrl
+            // && this.props.selectedProductId === nextProps.selectedProductId
+            && this.props.productId === nextProps.selectedProductId) {
+            return this.loadImage(nextProps.selectedProductUrl);
         }
     }
 
     componentDidMount() {
+        return this.loadImage(this.props.productUrl);
+    }
+
+    loadImage(url){
         const image = new window.Image();
-        image.src = this.props.productUrl;
+        image.src = url;
 
         image.onload = () => {
             this.setState({

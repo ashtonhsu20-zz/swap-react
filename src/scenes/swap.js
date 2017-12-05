@@ -59,7 +59,7 @@ class Swap extends React.Component {
             return;
         }
 
-        return this.handleProductChange(id,productUrl)
+        return this.handleProductChange(id, productUrl)
     }
 
     render() {

@@ -7,17 +7,17 @@ class SideBar extends React.Component {
     }
 
     handleClick(url) {
-        return this.props.handleProductChange(this.props.selectedProductId, url);
+        return this.props.handleProductChange(this.props.selectedProductId, window.location.href + url);
     }
 
     render() {
         let products = this.props.similarProducts.map((product, index) =>
             <div
-                className={"similar-product" + (this.props.selectedProductUrl === product.url ? ' similar-product--active' : '')}
+                className={"similar-product" + (this.props.selectedProductUrl === window.location.href + product.url ? ' similar-product--active' : '')}
                 key={index}
                 onClick={() => this.handleClick(product.url)}
             >
-                <img src={product.url}/>
+                <img src={product.url} alt={"product url"}/>
                 <p>Price: {product.price}</p>
             </div>
         );

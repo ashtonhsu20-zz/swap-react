@@ -9,7 +9,9 @@ class Room extends React.Component {
             <Product
                 key={product.id}
                 productId={product.id}
-                productUrl={product.id === this.props.selectedProductId ? this.props.selectedProductUrl : product.url}
+                selectedProductId={this.props.selectedProductId}
+                productUrl={product.url}
+                selectedProductUrl={this.props.selectedProductUrl}
                 x={calculateCanvasPercentage(product.left)}
                 y={calculateCanvasPercentage(product.top)}
                 width={calculateCanvasPercentage(product.width)}
@@ -19,7 +21,7 @@ class Room extends React.Component {
         );
         return (
             <div>
-                <img className="room-image" src={this.props.roomPhoto}/>
+                <img className="room-image" src={this.props.roomPhoto} alt={"room url"}/>
                 <Stage width={1080} height={1080}>
                     <Layer>
                     {products}
