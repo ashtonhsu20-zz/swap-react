@@ -2,6 +2,7 @@ import React from 'react';
 import apiService from '../services/api.js';
 import Room from '../components/room.js';
 import SideBar from '../components/side-bar.js';
+import canvas from '../utilities/canvas';
 
 class Swap extends React.Component {
     constructor(props) {
@@ -55,7 +56,7 @@ class Swap extends React.Component {
     }
 
     handleCanvasClick(event, id, productUrl) {
-        if (clickedTransparent(event)) {
+        if (canvas.clickedTransparent(event)) {
             return;
         }
 
@@ -88,14 +89,6 @@ class Swap extends React.Component {
             </div>
         );
     }
-}
-
-function clickedTransparent(event) {
-    let ctx = document.getElementsByTagName("canvas")[0].getContext("2d");
-
-    let alpha = ctx.getImageData(event.evt.pageX, event.evt.pageY, 1, 1).data[3];
-
-    return alpha === 0
 }
 
 export default Swap;

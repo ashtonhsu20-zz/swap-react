@@ -1,6 +1,7 @@
 import React from 'react';
 import {Layer,Stage} from 'react-konva';
 import Product from "./product";
+import canvas from '../utilities/canvas';
 
 class Room extends React.Component {
 
@@ -12,10 +13,10 @@ class Room extends React.Component {
                 selectedProductId={this.props.selectedProductId}
                 productUrl={product.url}
                 selectedProductUrl={this.props.selectedProductUrl}
-                x={calculateCanvasPercentage(product.left)}
-                y={calculateCanvasPercentage(product.top)}
-                width={calculateCanvasPercentage(product.width)}
-                height={calculateCanvasPercentage(product.height)}
+                x={canvas.calculateCanvasPercentage(product.left)}
+                y={canvas.calculateCanvasPercentage(product.top)}
+                width={canvas.calculateCanvasPercentage(product.width)}
+                height={canvas.calculateCanvasPercentage(product.height)}
                 handleCanvasClick={this.props.handleCanvasClick}
             />
         );
